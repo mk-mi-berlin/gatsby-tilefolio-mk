@@ -5,7 +5,7 @@ const PostCard = ({ title, imgSrc, format, srcText, slug }) => {
   const text = srcText || "One title";
   return (
     <a href={slug}>
-      <div className="card">
+      <div className="card m-3">
         <div className="card-image">
           <figure className={figureClass}>
             <img src={imgSrc} alt="" />

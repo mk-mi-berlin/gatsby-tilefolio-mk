@@ -7,6 +7,7 @@
   Gatsby TileFolio
 </h1>
 
+Another Gatsby website starter using Bulma and React Masonry CSS
 
 ## Overview
 
@@ -23,4 +24,4 @@
 2. **Deploy on Netlify**
 
 <!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://github.com/GraineDi/gatsby-tilefolio.git)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/GraineDi/gatsby-tilefolio.git)

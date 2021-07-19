@@ -2,7 +2,7 @@
   "name": "gatsby-tilefolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Gatsby Bulma Masonry Blog",
+  "description": "Another Gatsby website starter using Bulma and React Masonry CSS",
   "author": "fabien",
   "keywords": [
     "gatsby"

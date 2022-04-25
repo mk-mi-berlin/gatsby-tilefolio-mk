@@ -48,9 +48,9 @@ module.exports = {
       resolve: `gatsby-source-s3`,
       options: {
         aws: {
-          accessKeyId: process.env.AWS_ACCESS_KEY_IDmk,//"A_________ILOD52C",
-          secretAccessKey: process.env.AWS_SECRET_ACCESS_KEYmk,//"_______HDCswIjnGLs9PZJlTA8PEap",
-          region: process.env.AWS_REGIONmk,//"eu-central-1",
+          accessKeyId: "AKIAVYJGSZMSEILOD52C",//process.env.AWS_ACCESS_KEY_IDmk,//"A_________ILOD52C",
+          secretAccessKey: "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",//process.env.AWS_SECRET_ACCESS_KEYmk,//"_______HDCswIjnGLs9PZJlTA8PEap",
+          region: "eu-central-1",//process.env.AWS_REGIONmk,//"eu-central-1",
         },
         
         buckets: ["mk1gatsby"], 

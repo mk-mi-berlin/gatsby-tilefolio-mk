@@ -2,6 +2,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
+      
+      allS3Object {
+        edges {
+          node {
+            url
+          }
+        }
+      }
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -43,6 +51,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
+
+  //S3
+  result.data.allS3Object.edges.forEach(({ node }) => {
+
+    console.log("mk1nodeurl ", node.url) ;
+    
+  
+  
+  });
+
   // pages creation
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     if (node.frontmatter.path == null) {

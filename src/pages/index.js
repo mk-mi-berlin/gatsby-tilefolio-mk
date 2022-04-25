@@ -3,6 +3,9 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import Masonry from "react-masonry-css";
 import PostCard from "../components/postCard";
+import Img from "gatsby-image";
+
+//const Image = ({ data }) => <Img fluid={allS3Object.edges[1].node.localFile.childImageSharp.fluid} />;
 
 const breakpointColumnsObj = {
   default: 5,
@@ -14,34 +17,76 @@ const breakpointColumnsObj = {
 
 const Homepage = ({ data }) => {
   let { edges } = data.allDataJson;
-
+  //const xy = data.allS3Object.edges[0].node.url;
   return (
     <Layout>
+
+      <div>mk1masonry from index()</div>
+      <Img fluid={data.images.nodes[1].localFile.childImageSharp.fluid} />
+
+      <p>{ data.allS3Object.edges[1].node.localFile.publicURL }</p>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {edges.map(({ node }, index) => {
+        {data.allS3Object.edges.map(({ node }, index) => {
           return (
-            <PostCard
-              title={node.title}
-              imgSrc={node.imgSrc}
-              format={node.format}
-              srcText={node.srcText}
-              slug={node.slug}
-              key={index}
-            />
+            <Img fluid={data.images.nodes[index].localFile.childImageSharp.fluid} key={index} />
+            // <PostCard
+            //   title={node.localFile.name}
+            //   imgSrc={node.localFile.publicURL}
+            //   format={node.url}
+            //   srcText={index}
+            //   slug={index}
+            //   key={index}
+            // />
           );
         })}
+        
+        
+        
       </Masonry>
     </Layout>
   );
 };
 
+
 export const query = graphql`
   query HomePageQuery {
-    allDataJson {
+    
+      images: allS3Object {
+        nodes {
+          Key
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1024) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    
+    allS3Object: allS3Object {
+      edges {
+        node {
+          url
+          localFile {
+            name
+            publicURL
+            relativePath
+            id
+            childrenImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+    allDataJson: allDataJson {
       edges {
         node {
           id

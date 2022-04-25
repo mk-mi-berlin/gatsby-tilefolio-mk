@@ -2,20 +2,20 @@
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -10px; /* gutter size offset */
+  margin-left: -5px; /* gutter size offset */
   width: auto;
-  margin-top: 50px;
-  padding-top: 10px;
+  margin-top: 5px;
+  padding-top: 5px;
 }
 .my-masonry-grid_column {
-  padding-left: 0px; /* gutter size */
+  padding-left: 5px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
 .my-masonry-grid_column > div {
   /* change div to reference your elements you put in <Masonry> */
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /*Bulma customisation
@@ -25,6 +25,6 @@ https://versions.bulma.io/0.7.0/documentation/overview/customize/
 @import "bulma/sass/utilities/functions";
 
 $footer-background-color: #fff;
-
+$body-background-color	: $grey;
 /* Bulma */
 @import "bulma";

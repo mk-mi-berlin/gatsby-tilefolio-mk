@@ -4,6 +4,7 @@ import Seo from "../components/seo";
 import Header from "../components/header";
 import { graphql } from "gatsby";
 
+
 export default function Template({ data }) {
   const { frontmatter, html } = data.markdownRemark;
   return (
@@ -11,6 +12,7 @@ export default function Template({ data }) {
       <Seo />
       <Header pageTitle={frontmatter.title} />
       <div className="container">
+        
         <section className="section box">
           <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
         </section>

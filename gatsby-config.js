@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://gatsby-tilefolio.netlify.app",
@@ -41,6 +43,19 @@ module.exports = {
         name: `markdown-pages`,
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-source-s3`,
+      options: {
+        aws: {
+          accessKeyId: process.env.AWS_ACCESS_KEY_ID,//"A_________ILOD52C",
+          secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,//"_______HDCswIjnGLs9PZJlTA8PEap",
+          region: process.env.AWS_REGION,//"eu-central-1",
+        },
+        
+        buckets: ["mk1gatsby"], 
+        expiration: 120,
+      },
     },
     `gatsby-transformer-json`,
     {

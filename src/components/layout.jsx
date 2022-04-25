@@ -4,7 +4,7 @@ import Footer from "./footer";
 
 const Layout = ({ children }) => {
   return (
-    <section class="section">
+    <section className="section">
       <div className="container is-fluid">
         <NavBar />
         <main className="container is-fluid">{children}</main>
